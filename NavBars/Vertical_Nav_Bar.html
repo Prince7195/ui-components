@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Nav Bar</title>
+    <style>
+      .nav {
+        background-color: #f1f1f1;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 250px;
+      }
+      .nav-link a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        padding: 8px 16px;
+      }
+      .nav-link a:hover {
+        background-color: #555;
+        color: #fff;
+      }
+      .nav-link a.active {
+        background-color: #4CAF50;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>Vertical Nav Bar</h1>
+    <ul class="nav">
+      <li class="nav-link"><a class="active" href="javascript:void(0)">Home</a></li>
+      <li class="nav-link"><a href="javascript:void(0)">Link 1</a></li>
+      <li class="nav-link"><a href="javascript:void(0)">Link 2</a></li>
+      <li class="nav-link"><a href="javascript:void(0)">Link 3</a></li>
+    </ul>
+    <script>
+        const actionsList = document.querySelectorAll('a');
+        actionsList.forEach(element => {
+            element.addEventListener('click', function(event) {
+                actionsList.forEach(element => {
+                    element.classList.remove('active');
+                });
+                event.target.classList.add('active');
+            })
+        });
+    </script>
+  </body>
+</html>

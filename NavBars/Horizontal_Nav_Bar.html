@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Nav Bar</title>
+    <style>
+      html, body {
+        height: 100%;
+      }
+      .nav {
+        background-color: #333;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden; /* specific for horizontal nav bar when li is used float */
+      }
+      .nav-link {
+        float: left; /* specific for horizontal nav bar */
+        /* display: inline;*/ /*specific for horizontal nav bar */
+      }
+      .nav-link:last-child {
+        float: right;
+      }
+      .nav-link a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        padding: 16px 16px;
+      }
+      .nav-link a:hover {
+        background-color: #111;
+        color: #fff;
+      }
+      .nav-link a.active {
+        background-color: #4CAF50;
+        color: #fff;
+      }
+
+      /* Fixed top header */
+      /* .nav {
+        top: 0;
+        position: fixed;
+        width: 100%;
+      } */
+
+      .content {
+        background-color: #ccc;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+      <h1>Horizontal Nav Bar</h1>
+    <ul class="nav">
+      <li class="nav-link"><a class="active" href="javascript:void(0)">Home</a></li>
+      <li class="nav-link"><a href="javascript:void(0)">Link 1</a></li>
+      <li class="nav-link"><a href="javascript:void(0)">Link 2</a></li>
+      <li class="nav-link"><a href="javascript:void(0)">Link 3</a></li>
+    </ul>
+    <div class="content">
+
+    </div>
+    <script>
+        const actionsList = document.querySelectorAll('a');
+        actionsList.forEach(element => {
+            element.addEventListener('click', function(event) {
+                actionsList.forEach(element => {
+                    element.classList.remove('active');
+                });
+                event.target.classList.add('active');
+            })
+        });
+    </script>
+  </body>
+</html>
