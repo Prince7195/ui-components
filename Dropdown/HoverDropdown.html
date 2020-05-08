@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Dropdown</title>
+    <style>
+      .dropdown-btn {
+        padding: 16px;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .dropdown {
+        display: inline-block;
+        position: relative;
+      }
+      .dropdown:hover .dropdown-btn {
+        background-color: #3e8e41;
+      }
+      .dropdown-content {
+        display: none;
+        background-color: #f9f9f9;
+        position: absolute;
+        /* min-width: 150px; */ /* for fixed width of dropdown */
+        z-index: 1;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        overflow: auto; /* for button width of dropdown and creates scroll on contet */
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a {
+        color: #000;
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hover Dropdown</h1>
+    <div class="dropdown">
+      <button class="dropdown-btn">Dropdown</button>
+      <div class="dropdown-content">
+        <a href="javascript:void(0)">Link 1</a>
+        <a href="javascript:void(0)">Link 2</a>
+        <a href="javascript:void(0)">Link 3</a>
+      </div>
+    </div>
+  </body>
+</html>
