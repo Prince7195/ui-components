@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Image Gallery</title>
+    <style>
+      .gallery {
+        margin: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        display: inline-block; /* or use float: left */
+        /* float: left; */
+        width: 23.8%;
+        border: 1px solid #ccc;
+      }
+
+      @media only screen and (max-width: 1265px) {
+        .gallery {
+          width: 32.1%;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        .gallery {
+          width: 46%;
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        .gallery {
+          width: 96%;
+        }
+      }
+
+      .gallery img {
+        width: 100%;
+        height: auto;
+      }
+
+      .gallery:hover {
+        border-color: #777;
+      }
+
+      .gallery .desc {
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="gallery">
+      <img
+        src="chrome-extension://kffommgfchlppadgomjmpnkjiaajclcb/start/skin/images/bg-14.jpg"
+        class="img"
+        width="575"
+        height="330"
+      />
+      <div class="desc">
+        Add a description of the image here
+      </div>
+    </div> -->
+    <script>
+      const bodyEl = document.querySelector("body");
+      let galleryColl = "";
+      const gallery = (num) => {
+          return `
+              <div class="gallery">
+                <img
+                    src="chrome-extension://kffommgfchlppadgomjmpnkjiaajclcb/start/skin/images/bg-${num}.jpg"
+                    class="img"
+                    width="575"
+                    height="330"
+                />
+                <div class="desc">
+                    Add a description of the image here
+                </div>
+            </div>
+              `
+        };
+        for(let i = 10; i<=60; i++) {
+            galleryColl += gallery(i);
+        }
+        bodyEl.innerHTML = galleryColl;
+    </script>
+  </body>
+</html>
