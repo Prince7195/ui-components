@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered Pagination</title>
+    <style>
+      body {
+        margin: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .pagination {
+        display: inline-block;
+      }
+
+      .pagination a {
+        text-decoration: none;
+        color: #000;
+        float: left;
+        padding: 8px 16px;
+      }
+
+      .pagination a.active {
+        color: #fff;
+        background-color: #4caf50;
+      }
+
+      .pagination a:hover:not(.active) {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+      </div>
+    </div>
+  </body>
+</html>
